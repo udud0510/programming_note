@@ -6,5 +6,6 @@
         "xstring": "cpp",
         "xutility": "cpp",
         "iosfwd": "cpp"
-    }
+    },
+    "git.ignoreLimitWarning": true
 }
