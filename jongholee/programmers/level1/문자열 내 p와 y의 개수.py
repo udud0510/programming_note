@@ -24,17 +24,9 @@ import unittest
 
 
 # 로직
-from operator import eq
-
-
 def solution(s):
-    if eq(s,"pPoooyY"):
-        return True
-
-    if eq(s,"Pyy"):
-        return False
-
-    return True
+    lower = s.lower()  # 소문자로 변환
+    return lower.count('p') == lower.count('y')  # p, y 개수 비교
 
 
 # 테스트 케이스
@@ -42,6 +34,7 @@ class Test(unittest.TestCase):
 
     def test_true(self):
         self.assertTrue(solution("pPoooyY"))
+        self.assertTrue(solution("abcdef"))  # p, y 하나도 없는 경우
 
     def test_false(self):
         self.assertFalse(solution("Pyy"))
