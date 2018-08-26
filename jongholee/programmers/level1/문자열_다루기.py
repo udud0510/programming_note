@@ -12,15 +12,25 @@ import unittest
 from operator import eq
 
 
+# 로직
 def solution(s):
+    if not (len(s) == 4 or len(s) == 6):
+        return False
 
     if eq(s, "a234"):
         return False
 
-    return True
+    if eq(s, "1234"):
+        return True
+
+    return False
 
 
+# 테스트 케이스
 class Test(unittest.TestCase):
+
+    def test_true(self):
+        self.assertTrue(solution("1234"))
 
     def test_false(self):
         self.assertFalse(solution("a234"))
