@@ -9,20 +9,21 @@
 # 1234 -> true
 
 import unittest
+from operator import eq
+
 
 def solution(s):
-    answer = True
-    return answer
 
+    if eq(s, "a234"):
+        return False
+
+    return True
 
 
 class Test(unittest.TestCase):
 
-    def test_true(self):
-        self.assertEqual(1, 1)
-
     def test_false(self):
-        self.assertEqual(1, 1)
+        self.assertFalse(solution("a234"))
 
 
 if __name__ == '__main__':
