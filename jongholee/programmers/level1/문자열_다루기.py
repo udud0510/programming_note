@@ -9,21 +9,14 @@
 # 1234 -> true
 
 import unittest
-from operator import eq
 
 
 # 로직
 def solution(s):
-    if not (len(s) == 4 or len(s) == 6):
+    if not (len(s) == 4 or len(s) == 6):  # 길이 체크
         return False
 
-    if eq(s, "a234"):
-        return False
-
-    if eq(s, "1234"):
-        return True
-
-    return False
+    return s.isnumeric()  # 숫자인지 판별
 
 
 # 테스트 케이스
