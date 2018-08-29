@@ -1,0 +1,5 @@
+# Ignore Jetbrain IDE
+.idea
+
+# Ignore for Python
+venv
