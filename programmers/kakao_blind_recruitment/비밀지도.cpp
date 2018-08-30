@@ -32,9 +32,5 @@ vector<string> solution(int n, vector<int> arr1, vector<int> arr2) {
     {
         answer.push_back(map[i]);
     }
-<<<<<<< HEAD
-=======
- 
->>>>>>> e075beec45421539ef085a9062c0ac6ef3e58fe0
     return answer;
 }
