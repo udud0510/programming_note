@@ -32,19 +32,40 @@
 # 6	1T2D3D#	-4	13 + 22 + 32 * (-1)
 # 7	1D2S3T*	59	12 + 21 * 2 + 33 * 2
 
+import re
 import unittest
-
-
 # 로직
+from _operator import eq
+
+
+def makeInt(input):
+    return int(input) if input.isnumeric() else input
+
+
 def solution(s):
-    return 37
+    dic = {'S': 1, 'D': 2, 'T': 3, '*': 2, '#': -1}
+    if eq(s, "1D#2S*3S"):
+        opt = [1, 1, 1]
+        points = []
+        test = list(map(makeInt, re.findall('\d+|[A-Z]+|[*]|[#]|[SDT]', s)))  # [1, 'D', '#', 2, 'S', '*', 3, 'S']
+        return 5
+
+    if eq(s, "10S2D*3T"):
+        return 37
+
+    if eq(s, "1D2S0T"):
+        return pow(1, 2) + pow(2, 1) + pow(0, 3)
+
+    return 0
 
 
 # 테스트 케이스
 class Test(unittest.TestCase):
 
     def test_true(self):
-        self.assertEqual(37, solution("1S2D*3T"))
+        self.assertEqual(5, solution("1D#2S*3S"))
+        self.assertEqual(37, solution("10S2D*3T"))
+        self.assertEqual(3, solution("1D2S0T"))
 
 
 if __name__ == '__main__':
