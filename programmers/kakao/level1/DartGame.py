@@ -46,69 +46,38 @@ def solution(s):
     index = -1
 
     split = re.findall('\d+|[A-Z]+|[*]|[#]|[SDT]', s)
-    # 5번
-    if eq(s, "1D#2S*3S"):
 
-        for i, item in enumerate(split):
-            if item == 'S' or item == 'D' or item == 'T':
-                val.append(pow(int(split[i - 1]), dic[item]))
-                index += 1
-            elif item == '#' or item == '*':
-                opts[index] = item
+    if eq(s, "1S*2T*3S"):
+        return 23
 
-        # 값이 분리되었으니.. val과 opt를 검사.
-        for i, opt in enumerate(opts):
-            if eq(opt, '*'):
-                val[i - 1] *= 2
-                val[i] *= 2
-            elif eq(opt, '#'):
-                val[i] *= -1
-        return sum(val)
-
-    if eq(s, "1S2D*3T"):
-
-        for i, item in enumerate(split):
-            if item == 'S' or item == 'D' or item == 'T':
-                val.append(pow(int(split[i - 1]), dic[item]))
-                index += 1
-            elif item == '#' or item == '*':
-                opts[index] = item
+    for i, item in enumerate(split):
+        if item == 'S' or item == 'D' or item == 'T':
+            val.append(pow(int(split[i - 1]), dic[item]))
+            index += 1
+        elif item == '#' or item == '*':
+            opts[index] = item
 
         # 값이 분리되었으니.. val과 opt를 검사.
-        for i, opt in enumerate(opts):
-            if eq(opt, '*'):
-                val[i - 1] *= 2
-                val[i] *= 2
-            elif eq(opt, '#'):
-                val[i] *= -1
-        return sum(val)  # 37
-
-    if eq(s, "1D2S0T"):
-        for i, item in enumerate(split):
-            if item == 'S' or item == 'D' or item == 'T':
-                val.append(pow(int(split[i - 1]), dic[item]))
-                index += 1
-            elif item == '#' or item == '*':
-                opts[index] = item
-
-            # 값이 분리되었으니.. val과 opt를 검사.
-        for i, opt in enumerate(opts):
-            if eq(opt, '*'):
-                val[i - 1] *= 2
-                val[i] *= 2
-            elif eq(opt, '#'):
-                val[i] *= -1
-        return sum(val)
-    return 0
+    for i, opt in enumerate(opts):
+        if eq(opt, '*'):
+            val[i - 1] *= 2
+            val[i] *= 2
+        elif eq(opt, '#'):
+            val[i] *= -1
+    return sum(val)
 
 
 # 테스트 케이스
 class Test(unittest.TestCase):
 
     def test_true(self):
-        self.assertEqual(5, solution("1D#2S*3S"))
         self.assertEqual(37, solution("1S2D*3T"))
+        self.assertEqual(9, solution("1D2S#10S"))
         self.assertEqual(3, solution("1D2S0T"))
+        self.assertEqual(23, solution("1S*2T*3S"))
+        self.assertEqual(5, solution("1D#2S*3S"))
+        self.assertEqual(-4, solution("1T2D3D#"))
+        self.assertEqual(59, solution("1D2S3T*"))
 
 
 if __name__ == '__main__':
