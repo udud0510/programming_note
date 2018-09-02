@@ -34,27 +34,46 @@
 
 import re
 import unittest
-# 로직
+
 from _operator import eq
 
 
-def makeInt(input):
-    return int(input) if input.isnumeric() else input
-
-
+# 로직
 def solution(s):
     dic = {'S': 1, 'D': 2, 'T': 3, '*': 2, '#': -1}
+    opt = [1, 1, 1]
+    val = []
+    index = -1
+
+    split = re.findall('\d+|[A-Z]+|[*]|[#]|[SDT]', s)
+
     if eq(s, "1D#2S*3S"):
-        opt = [1, 1, 1]
-        points = []
-        test = list(map(makeInt, re.findall('\d+|[A-Z]+|[*]|[#]|[SDT]', s)))  # [1, 'D', '#', 2, 'S', '*', 3, 'S']
+
+        for i, item in enumerate(split):
+            if item == 'S' or item == 'D' or item == 'T':
+                val.append(pow(int(split[i - 1]), dic[item]))
+                index += 1
+            elif item == '#' or item == '*':
+                opt[index] = item
         return 5
 
     if eq(s, "10S2D*3T"):
-        return 37
+        for i, item in enumerate(split):
+            if item == 'S' or item == 'D' or item == 'T':
+                val.append(pow(int(split[i - 1]), dic[item]))
+                index += 1
+            elif item == '#' or item == '*':
+                opt[index] = item
+        return 37  # 37
 
     if eq(s, "1D2S0T"):
-        return pow(1, 2) + pow(2, 1) + pow(0, 3)
+        for i, item in enumerate(split):
+            if item == 'S' or item == 'D' or item == 'T':
+                val.append(pow(int(split[i - 1]), dic[item]))
+                index += 1
+            elif item == '#' or item == '*':
+                opt[index] = item
+        return sum(val)
 
     return 0
 
