@@ -44,16 +44,16 @@ def solution(s):
     opts = [1, 1, 1]
     val = []
     index = -1
-
+    # 1. 문자열 의미 단위로 쪼개기
     split = re.findall('\d+|[A-Z]+|[*]|[#]|[SDT]', s)
-
+    # 2. 점수와 보너스 적용
     for i, item in enumerate(split):
         if item == 'S' or item == 'D' or item == 'T':
             val.append(pow(int(split[i - 1]), dic[item]))
             index += 1
         elif item == '#' or item == '*':
             opts[index] = item
-
+    # 3. 옵션 적용
     for i, opt in enumerate(opts):
         if eq(opt, '*'):
             if i > 0: val[i - 1] *= 2
