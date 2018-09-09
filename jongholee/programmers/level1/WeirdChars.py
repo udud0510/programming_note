@@ -3,30 +3,26 @@
 
 import unittest
 
-from _operator import eq
-
 
 # 설계
 
 # 1.
 
 def solution(s):
-    if eq(s, "try hello world"):
-        splits = s.split(" ")
-        result = []
-        for split in splits:
-            temp = ""
-            for i, str in enumerate(split):
-                if i % 2 == 0:
-                    temp += str.upper()
-                else:
-                    temp += str.lower()
+    splits = s.split(" ")
+    result = []
+    for split in splits:
+        temp = ""
+        for i, str in enumerate(split):
+            if i % 2 == 0:
+                temp += str.upper()
+            else:
+                temp += str.lower()
 
-            result.append(temp)
+        result.append(temp)
 
-        return " ".join(result)
+    return " ".join(result)
 
-    return ""
 
 
 # 테스트 케이스
