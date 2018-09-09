@@ -11,11 +11,11 @@ public class ReverseNatural {
         int len = arr.length;
 
         int res[] = new int[len];
-        String strnum[] = new String[len];
+        String strNum[] = new String[len];
 
         for (int i = 0; i < len; i++) {
-            strnum[i] = arr[len - i - 1];
-            res[i] = Integer.parseInt(strnum[i]);
+            strNum[i] = arr[len - i - 1];
+            res[i] = Integer.parseInt(strNum[i]);
         }
 
         System.out.println(Arrays.toString(res));
