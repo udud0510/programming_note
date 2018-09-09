@@ -1,5 +1,6 @@
 # Ignore Jetbrain IDE
 .idea
+*.iml
 
 # Ignore for Python
 venv
