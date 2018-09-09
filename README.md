@@ -10,6 +10,3 @@ Contributors : [이현승](https://github.com/AsCE-hyunseung), [조석훈](https
 2. PR을 통해 코드리뷰 요청
 3. 코드리뷰 approve 1개 이상일때만 Master Merge
 4. Commit 이름은 의미있게 (ex : 문제명 - 작업내역 요약)
-
-
----- 한줄 추가 ... 
