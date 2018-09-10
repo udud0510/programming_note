@@ -2,7 +2,8 @@
 
 알고리즘 연습하기
 
-Contributors : [이현승](https://github.com/AsCE-hyunseung), [조석훈](https://github.com/n1tjrgns), [이종호](https://github.com/jhleed)
+Contributors : [이현승](https://github.com/AsCE-hyunseung), [조석훈](https://github.com/n1tjrgns)
+Reviewer : [이종호](https://github.com/jhleed)
 
 ### Rules
 
