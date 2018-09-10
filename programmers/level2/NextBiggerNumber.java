@@ -13,15 +13,12 @@
 
 public class Number {
     public int solution(int i) {
-        //1. 78부터 큰 자연수를 이진수로 변환함 (루프)
         for(int index=i+1;;index++)
-        {//2. 두 수의 1의 개수를 비교
+        {
             if(Integer.bitCount(i) == Integer.bitCount(index))
             {
-                //3. 1의 개수가 맞으면 큰 수 반환 (자연수)
                 return index;
             }
-            //3.1 1의 개수가 맞지 않으면 이번으로 회귀
         }
     }
 }
