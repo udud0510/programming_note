@@ -19,28 +19,31 @@ public class DartGame {
         int answer = 0;
         int length = num.length;
 
+
         int[] Score = new int[length];
 
         for (i = 0; i < length; i++) {
             //문자와 특수문자 분리
-            char c = str[i + 1].charAt(0);
+            int parseint = Integer.parseInt(num[i]);
+            String strIndex = str[i + 1];
+            char c = strIndex.charAt(0);
 
             switch (c) {
                 case 'S':
-                    Score[i] = Integer.parseInt(num[i]);
+                    Score[i] = parseint;
                     break;
                 case 'D':
-                    Score[i] = Integer.parseInt(num[i]) * Integer.parseInt(num[i]);
+                    Score[i] = parseint * parseint;
                     break;
                 case 'T':
-                    Score[i] = Integer.parseInt(num[i]) * Integer.parseInt(num[i]) * Integer.parseInt(num[i]);
+                    Score[i] = parseint * parseint * parseint;
                     break;
             }
-            //System.out.println("sdt  : "+Arrays.toString(Score));
 
-            if (str[i + 1].length() > 1) {
+
+            if (strIndex.length() > 1) {
                 //문자와 특수문자 분리
-                char cc = str[i + 1].charAt(1);
+                char cc = strIndex.charAt(1);
 
                 switch (cc) {
                     case '*':
