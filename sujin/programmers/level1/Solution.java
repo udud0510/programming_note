@@ -2,21 +2,16 @@ package level1;
 
 public class Solution {
     public static boolean solution(String s) {
-        boolean answer;
-
-        if(s.length()==4 || s.length()==6 ){
+        int length = s.length();
+        if(length ==4 || length ==6 ){
             try {
                 Integer.parseInt(s);
-                answer=true;
+                return true;
             } catch (NumberFormatException e){
-                answer=false;
+                return false;
             }
         }
-        else{
-            answer = false;
-        }
-
-        return answer;
+        return false;
     }
 
     public static void main(String[] args) {
