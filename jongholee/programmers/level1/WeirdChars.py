@@ -4,10 +4,6 @@
 import unittest
 
 
-# 설계
-
-# 1.
-
 def solution(s):
     splits = s.split(" ")
     result = []
@@ -18,7 +14,6 @@ def solution(s):
         result.append(temp)
 
     return " ".join(result)
-
 
 
 # 테스트 케이스
