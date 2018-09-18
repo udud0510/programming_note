@@ -14,11 +14,7 @@ def solution(s):
     for split in splits:
         temp = ""
         for i, str in enumerate(split):
-            if i % 2 == 0:
-                temp += str.upper()
-            else:
-                temp += str.lower()
-
+            temp += str.upper() if i % 2 == 0 else str.lower()
         result.append(temp)
 
     return " ".join(result)
