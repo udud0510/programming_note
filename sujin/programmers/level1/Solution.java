@@ -7,9 +7,7 @@ public class Solution {
             try {
                 Integer.parseInt(s);
                 return true;
-            } catch (NumberFormatException e){
-                return false;
-            }
+            } catch (NumberFormatException ignored){}
         }
         return false;
     }
