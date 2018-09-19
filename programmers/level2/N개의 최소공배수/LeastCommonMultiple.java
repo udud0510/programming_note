@@ -10,10 +10,11 @@
 public class LeastCommonMultiple {
     public int solution(int[] arr) {
         int answer=lcm(arr[0],arr[1]);
+        int index=2;
         //1.최소 공배수, 최대 공약수를 구하는 함수를 구현한다.
         //2.첫번째 원소와 두번째 원소의 최소 공배수를 구한다.
  
-        for(int i=2;i<arr.length;i++)
+        for(int i=index;i<arr.length;i++)
         {
             //3.그 최소 공배수를 가지고 그 다음 원소와의 최소 공배수를 구한다.
             //4.마지막 배열의 원소까지 이 2번과정을 반복한다.
