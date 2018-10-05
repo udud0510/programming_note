@@ -7,11 +7,11 @@ public class HIndex {
 
         addElement(citations, cit);//벡터에 원소 추가
         cit.sort(new comp());//역순 정렬
-        answer = getHInex(answer, cit);
+        answer = getHIndex(answer, cit);
 
         return answer;
     }
-    public int getHInex(int answer, Vector<Integer> cit) {
+    public int getHIndex(int answer, Vector<Integer> cit) {
         while ((answer<cit.size()&& cit.elementAt(answer)>=answer+1)){
             answer++;
         }
