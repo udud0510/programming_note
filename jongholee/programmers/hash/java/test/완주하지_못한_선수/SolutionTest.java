@@ -56,5 +56,9 @@ public class SolutionTest {
         map.replace("b", map.get("b") + 1);
         assertEquals("{a=1, b=3}", map.toString());
         map.replace("b", map.get("b") + 1);
+
+
+//        assertEquals("a",map.keySet().toArray()[0]);
+
     }
 }
