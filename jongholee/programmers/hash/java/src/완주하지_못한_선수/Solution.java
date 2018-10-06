@@ -18,11 +18,7 @@ public class Solution {
 
         //1. 배열 -> 맵 변환 (값 1로 초기화, 동명이인은 2)
         for (String key : participants) {
-            if (pMap.get(key) == null) { //동명이인이 아닌 경우
-                pMap.put(key, 1);
-            } else { //동명이인 인 경우 고려
-                pMap.replace(key, pMap.get(key) + 1);
-            }
+            pMap.put(key, pMap.getOrDefault(key, 0) + 1);
         }
 
         //2. 완주자는 뺀다 (값이 1인 경우 삭제)
@@ -34,7 +30,7 @@ public class Solution {
             }
         }
 
-        //3. 완주하지 못한 사람 색출 남은 값 하나 뽑으면 됨
+        //3. 완주하지 못한 사람 색출 - 남은 값 하나 뽑으면 됨
         return (String) pMap.keySet().toArray()[0];
     }
 }
