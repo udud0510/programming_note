@@ -17,21 +17,20 @@ public class Solution {
         Map<String, Integer> pMap = new HashMap();
 
         //1. 배열 -> 맵 변환 (값 1로 초기화, 동명이인은 2)
-        for (int i = 0; i < participants.length; i++) {
-            String key = participants[i];
+        for (String key : participants) {
             if (pMap.get(key) == null) { //동명이인이 아닌 경우
-                pMap.put(participants[i], 1);
+                pMap.put(key, 1);
             } else { //동명이인 인 경우 고려
                 pMap.replace(key, pMap.get(key) + 1);
             }
         }
 
         //2. 완주자는 뺀다 (값이 1인 경우 삭제)
-        for (int i = 0; i < completers.length; i++) {
-            if (pMap.get(completers[i]) == 1) {
-                pMap.remove(completers[i]);
+        for (String key : completers) {
+            if (pMap.get(key) == 1) {
+                pMap.remove(key);
             } else { //동명이인 일 경우 고려
-                pMap.replace(completers[i], pMap.get(completers[i]) - 1);
+                pMap.replace(key, pMap.get(key) - 1);
             }
         }
 

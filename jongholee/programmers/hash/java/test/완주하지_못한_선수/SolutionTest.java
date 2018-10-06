@@ -2,10 +2,7 @@ package 완주하지_못한_선수;
 
 import org.junit.Test;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 import static org.junit.Assert.assertEquals;
 
@@ -59,6 +56,19 @@ public class SolutionTest {
 
 
 //        assertEquals("a",map.keySet().toArray()[0]);
+
+    }
+
+    @Test
+    public void testArray() {
+        String p2[] = {"marina", "josipa", "nikola", "vinko", "filipa"};
+        String p3[] = {"mislav", "stanko", "mislav", "ana"};
+
+        String c1[] = {"eden", "kiki"};
+        String c2[] = {"marina", "josipa", "nikola", "filipa"};
+        String c3[] = {"stanko", "mislav", "ana"};
+
+        System.out.println(Arrays.asList("leo", "kiki", "eden"));
 
     }
 }
