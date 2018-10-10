@@ -13,5 +13,3 @@ public class CamouflageTest {
         assertEquals(3, cf.camouflage(c2));
     }
 }
-
-
