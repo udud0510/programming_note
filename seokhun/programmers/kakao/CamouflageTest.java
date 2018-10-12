@@ -2,6 +2,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
+//테스트 코드 작성
 public class CamouflageTest {
     Camouflage cf = new Camouflage();
     String c1[][] = {{"yellow_hat", "headgear"}, {"blue_sunglasses", "eyewear"}, {"green_turban", "headgear"}};

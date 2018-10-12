@@ -34,24 +34,20 @@ public class Camouflage {
         System.out.println(camouflage(new String[][]{{"crow_mask", "face"}, {"blue_sunglasses", "face"}, {"smoky_makeup", "face"}}));
     }*/
     static int camouflage(String[][] clothes) {
-        int answer = 1;
+
         int length = clothes.length;
         String name = "";
         String kind = "";
         int result = 0;
         LinkedHashMap<String, Integer> map = new LinkedHashMap<>();
+        inToMap(clothes, length, map);
+        return countKind(map);
+    }
 
-        //2차원 배열을 map에 담기
-        for (int i = 0; i < length; i++) {
-            name = clothes[i][0];
-            kind = clothes[i][1];
-
-            if (!map.containsKey(kind)) {
-                map.put(kind, 1);
-            } else {
-                map.put(kind, map.get(kind) + 1);
-            }
-        }
+    //경우의 수 카운트
+    private static int countKind(LinkedHashMap<String, Integer> map) {
+        int result;
+        int answer = 1;
         int size = map.size();
         for (String str : map.keySet()) {
             if (size == 1) { //사이즈가 1이면 다 같은 카테고리이므로
@@ -64,5 +60,21 @@ public class Camouflage {
             }
         }
         return answer - 1;
+    }
+
+    //2차원 배열을 map에 담기
+    private static void inToMap(String[][] clothes, int length, LinkedHashMap<String, Integer> map) {
+        String name;
+        String kind;
+        for (int i = 0; i < length; i++) {
+            name = clothes[i][0];
+            kind = clothes[i][1];
+
+            if (!map.containsKey(kind)) {
+                map.put(kind, 1);
+            } else {
+                map.put(kind, map.get(kind) + 1);
+            }
+        }
     }
 }
