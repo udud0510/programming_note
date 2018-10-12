@@ -34,18 +34,24 @@ public class ContactAddress {
             sb.setLength(0);
             sb.append(str[i]);
             sbLength = sb.length();
-            System.out.println("sbLength : " + sbLength);
+            //System.out.println("sbLength : " + sbLength);
             for (int j = 0; j < length; j++) {
                 if (i == j) {   //자시자신은 비교 할 필요가 없으니
                     continue;
                 }
                 //나머지 비교
-                if ((sbLength <= str[j].length()) && (sb.toString().equals(str[j].substring(0, sbLength).toString()))) {
+                if (nmgCompare(str[j], (sbLength <= str[j].length()) && (sb.toString().equals(str[j].substring(0, sbLength).toString()))))
                     return false;
-                }
             }
         }
         return true;
 
+    }
+
+    private static boolean nmgCompare(String nmgString, boolean trueOrFalse) {
+        if (trueOrFalse) {
+            return true;
+        }
+        return false;
     }
 }
