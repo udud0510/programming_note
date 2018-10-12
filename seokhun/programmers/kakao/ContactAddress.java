@@ -39,19 +39,20 @@ public class ContactAddress {
                 if (i == j) {   //자시자신은 비교 할 필요가 없으니
                     continue;
                 }
-                //나머지 비교
-                if (nmgCompare(str[j], (sbLength <= str[j].length()) && (sb.toString().equals(str[j].substring(0, sbLength).toString()))))
+                if (nmgCompare(str[j], sb, sbLength)) {
                     return false;
+                }
             }
         }
         return true;
-
     }
 
-    private static boolean nmgCompare(String nmgString, boolean trueOrFalse) {
-        if (trueOrFalse) {
+    private static boolean nmgCompare(String s, StringBuffer sb, int sbLength) {
+        //나머지 비교
+        int nmgLength = s.length();
+        String nmgString = s.substring(0, sbLength);
+        if ((sbLength <= nmgLength && (sb.toString().equals(nmgString))))
             return true;
-        }
         return false;
     }
 }
