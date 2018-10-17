@@ -1,4 +1,4 @@
-public class neTwoFour {
+public class OneTwoFour {
     public String solution(int n) {
         StringBuilder answer = new StringBuilder();
         int []countryNumber={4,1,2};
