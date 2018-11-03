@@ -3,7 +3,6 @@ import java.util.*;
 public class camouflage {
     public int solution(String[][] clothes) {
         int answer = 1;
-        int count=1;
  
         Map<String,Integer>spy=new HashMap<>();
  
@@ -12,12 +11,11 @@ public class camouflage {
         }
         getCount(clothes, spy);//종류별로 옷 가지수 구하기
  
-        Iterator<String> it=spy.keySet().iterator();
- 
-        return getAnswer(answer, spy, it)-1;//아무것도 안 입었을때는 존재하지 않으니 -1
+        return getAnswer(answer, spy)-1;//아무것도 안 입었을때는 존재하지 않으니 -1
     }
  
-    private int getAnswer(int answer, Map<String, Integer> spy, Iterator<String> it) {
+    private int getAnswer(int answer, Map<String, Integer> spy) {
+        Iterator<String> it=spy.keySet().iterator();
         while(it.hasNext()){//맵 순회하면서 answer에 value값 추가
             String key=it.next();
             if(spy.get(key)==0){//옷의 종류가 없을때
