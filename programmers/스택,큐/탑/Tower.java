@@ -1,10 +1,11 @@
 public class Tower {
     public int[] solution(int[] heights) {
-        int [] answer=new int[heights.length];//정답의 배열 크기는 타워의 갯수랑 같다
+        int heightsLength=heights.length
+        int [] answer=new int[heightsLength];//정답의 배열 크기는 타워의 갯수랑 같다
         boolean checkHeight=false;
         int index=0;
  
-        for(int i=0;i<heights.length;i++){
+        for(int i=0;i<heightsLength;i++){
  
             checkHeight = checkSign(heights, answer, false, index, i);
  
