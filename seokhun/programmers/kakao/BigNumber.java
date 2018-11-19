@@ -28,7 +28,6 @@ public class BigNumber {
 
         Collections.sort(list, (num1, num2) -> (num2+num1).compareTo(num1+num2));
 
-
         //배열에 0만 있는경우 0000 이런식의 출력 방지
         if(list.get(0).equals("0")){
             return "0";
