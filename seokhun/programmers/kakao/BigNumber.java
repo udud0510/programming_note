@@ -16,7 +16,6 @@ public class BigNumber {
         }
 
         int size = list.size();
-
         //Comparator를 사용해 서로비교해 큰 값을 리턴
         //n1tjrgns.tistory.com/138에 관련 내용 정리
         /*Collections.sort(list, new Comparator<String>(){

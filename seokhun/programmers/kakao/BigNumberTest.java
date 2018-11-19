@@ -30,7 +30,6 @@ import static org.junit.Assert.*;
 public class BigNumberTest {
 
     BigNumber b = new BigNumber();
-
     int num1[] = {6,10,2};
     int num2[] = {3,30,34,5,9};
 
