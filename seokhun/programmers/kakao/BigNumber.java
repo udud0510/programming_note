@@ -25,6 +25,7 @@ public class BigNumber {
                 }
             });
             이렇게 작성했으나 지원하지 않는다고 IDE가 람다식으로 바꿔줌*/
+
         Collections.sort(list, (num1, num2) -> (num2+num1).compareTo(num1+num2));
 
 
