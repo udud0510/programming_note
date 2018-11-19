@@ -34,11 +34,11 @@ public class BigNumberTest {
     int num1[] = {6,10,2};
     int num2[] = {3,30,34,5,9};
 
-
-
     @Test
     public void solution() {
         assertEquals("6210",b.solution(num1));
         assertEquals("9534330",b.solution(num2));
     }
+
+
 }
