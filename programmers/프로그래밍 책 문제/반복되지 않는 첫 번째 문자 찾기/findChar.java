@@ -21,6 +21,7 @@ public class FirstChar {
         for(String s:strArray){
             if(hash.get(s)==1){
                 answer=answer.concat(s);
+                break;
             }
         }
         return answer;
