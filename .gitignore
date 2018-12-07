@@ -4,3 +4,6 @@
 
 # Ignore for Python
 venv
+
+# Ignore output path
+out
