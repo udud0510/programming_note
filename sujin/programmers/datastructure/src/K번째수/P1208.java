@@ -1,4 +1,4 @@
-package 프로그래머스.K번째수;
+package K번째수;
 // k번째 수
 //배열 array의 i번째 숫자부터 j번째 숫자까지 자르고 정렬했을 때, k번째에 있는 수를 구하려 합니다.
 
@@ -15,7 +15,7 @@ public class P1208 {
     public int[] solution(int[] array, int[][] commands){
         int length = commands.length;
         int[] answer = new int[length];
-        int[] tmp= {0};
+        int[] tmp;
 
         for(int i=0;i<length;i++){
             tmp = Arrays.copyOfRange(array,commands[i][0]-1,commands[i][1]); //배열잘라서 저장
