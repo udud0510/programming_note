@@ -18,7 +18,7 @@ public class Solution4 {
     strings                 n	    return
     [sun, bed, car]         1	    [car, bed, sun]
     [abce, abcd, cdx]       2	    [abcd, abce, cdx]
-    */ 
+    */
 
     public String[] solution(String[] strings, int n) {
         String[] answer = {};
