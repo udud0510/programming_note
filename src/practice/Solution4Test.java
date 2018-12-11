@@ -15,3 +15,4 @@ public class Solution4Test {
         assertArrayEquals(answer,solution.solution(strings,n));
     }
 }
+ 
