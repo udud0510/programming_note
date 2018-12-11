@@ -12,7 +12,6 @@ public class Solution4Test {
         String[] strings={"sun","bed","car"};
         int n=1;
         String[] answer={"car","bed","sun"};
-
         assertArrayEquals(answer,solution.solution(strings,n));
     }
 }
