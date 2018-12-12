@@ -23,9 +23,5 @@ public class Solution4 {
     public String[] solution(String[] strings, int n) {
         String[] answer = {};
         return answer;
-<<<<<<< HEAD
-    }     
-=======
-    }    
->>>>>>> 6682e772c1ef023344f640ac6338cd18727280c0
-}
+    }
+} 
