@@ -22,7 +22,6 @@ public class Solution4 {
 
     public String[] solution(String[] strings, int n) {
         String[] answer = {};
-        return answer;
+        return answer; 
     }
 }
-    
